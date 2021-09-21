@@ -1,0 +1,12 @@
+html, body {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+#iframe, #map {
+  flex: 1;
+}
