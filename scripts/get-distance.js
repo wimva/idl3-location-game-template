@@ -32,34 +32,35 @@ function getDistance(lat1, lon1, lat2, lon2) {
   let brng = Math.atan2(y, x);
   brng = radiansToDegrees(brng);
 
-  const bearing = Math.round((brng + 360) % 360);
+  const direction = Math.round((brng + 360) % 360);
 
   return {
     distance,
-    bearing,
+    directionInDegrees: direction,
+    directionInWind: convertWindDirection(direction),
   };
 }
 
 // Convert Bearing
-function convertBearing(bearing) {
+function convertWindDirection(direction) {
   let result = '';
-  if (bearing < 22.5) {
+  if (direction < 22.5) {
     result = 'N';
-  } else if (bearing > 22.5 && bearing < 67.5) {
+  } else if (direction > 22.5 && direction < 67.5) {
     result = 'NE';
-  } else if (bearing > 67.5 && bearing < 112.5) {
+  } else if (direction > 67.5 && direction < 112.5) {
     result = 'E';
-  } else if (bearing > 112.5 && bearing < 157.5) {
+  } else if (direction > 112.5 && direction < 157.5) {
     result = 'SE';
-  } else if (bearing > 157.5 && bearing < 202.5) {
+  } else if (direction > 157.5 && direction < 202.5) {
     result = 'S';
-  } else if (bearing > 202.5 && bearing < 247.5) {
+  } else if (direction > 202.5 && direction < 247.5) {
     result = 'SW';
-  } else if (bearing > 247.5 && bearing < 292.5) {
+  } else if (direction > 247.5 && direction < 292.5) {
     result = 'W';
-  } else if (bearing > 292.5 && bearing < 337.5) {
+  } else if (direction > 292.5 && direction < 337.5) {
     result = 'NW';
-  } else if (bearing > 337.5) {
+  } else if (direction > 337.5) {
     result = 'N';
   }
 
