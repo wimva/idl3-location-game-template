@@ -1,17 +1,14 @@
 // iframe
 
 const iframeElement = document.querySelector('#iframe');
-const nextPage = localStorage.getItem('nextPage');
-const coordinates = localStorage.getItem('coordinates');
-const locationName = localStorage.getItem('locationName');
+iframeElement.src = getNextPage();
 
-if (nextPage) {
-  iframeElement.src = `./pages/navigate/index.html?coordinates=${coordinates}&locationName=${locationName}&nextPage=${nextPage}`;
-} else {
-  iframeElement.src = './pages/start/index.html';
+// simulator
+
+function drawCoordinatesAsText(coordinates) {
+  const coordinatesElement = document.querySelector('#coordinates');
+  coordinatesElement.textContent = `lat: ${coordinates.lat}, lng: ${coordinates.lng}`;
 }
-
-// map
 
 mapboxgl.accessToken = mapboxAccessToken;
 
@@ -19,6 +16,8 @@ const startCoordinates = {
   lat: 51.219608,
   lng: 4.411694
 };
+
+drawCoordinatesAsText(startCoordinates);
 
 const map = new mapboxgl.Map({
   container: 'map',
@@ -38,6 +37,7 @@ let markerCoordinates = startCoordinates;
 function onDragEnd() {
   markerCoordinates = marker.getLngLat();
   iframeElement.contentWindow.postMessage(markerCoordinates, "*");
+  drawCoordinatesAsText(markerCoordinates);
 }
 
 marker.on('dragend', onDragEnd);
