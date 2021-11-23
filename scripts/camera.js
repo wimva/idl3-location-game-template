@@ -8,18 +8,23 @@ async function startCamera(useFrontCamera, videoSelector, canvasSelector, captur
   let videoConfiguration = { facingMode: { exact: "environment" } };
   if (useFrontCamera) videoConfiguration = { facingMode: "user" };
 
-  let stream = await navigator.mediaDevices.getUserMedia({ video: videoConfiguration, audio: false });
-	videoElement.srcObject = stream;
+  try {
+    let stream = await navigator.mediaDevices.getUserMedia({ video: videoConfiguration, audio: false });
+    videoElement.srcObject = stream;
 
-  if (captureButton && canvasElement) {
-    captureButton.onclick = () => {
-      canvasElement.width = videoElement.videoWidth;
-      canvasElement.height = videoElement.videoHeight;
-      canvasElement.getContext('2d').drawImage(videoElement, 0, 0);
-      let imageBase64 = canvasElement.toDataURL('image/jpeg');
+    if (captureButton && canvasElement) {
+      captureButton.onclick = () => {
+        canvasElement.width = videoElement.videoWidth;
+        canvasElement.height = videoElement.videoHeight;
+        canvasElement.getContext('2d').drawImage(videoElement, 0, 0);
+        let imageBase64 = canvasElement.toDataURL('image/jpeg');
 
-      if (onClickFunction) onClickFunction(imageBase64);
-    };
+        if (onClickFunction) onClickFunction(imageBase64);
+      };
+    }
+  } catch(e) {
+    console.error(e);
+    alert(e);
   }
 };
 
