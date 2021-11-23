@@ -18,6 +18,12 @@ Vijfde argument: een functie die wordt aangeroepen als er een foto genomen is (f
 // .html
 //
 
+// head:
+
+<script defer src="../../scripts/camera.js"></script>
+
+// body:
+
 <video id="video" width="320" height="240" autoplay playsinline></video>
 <button id="capture">Capture</button>
 <canvas id="canvas"></canvas>
