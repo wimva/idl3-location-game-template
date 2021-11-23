@@ -2,16 +2,11 @@
 
 Gebruik:
 
-De video tag dient om je beeld te laten zien. Als je een foto wil laten
-nemen heb je de capture button nodig en een canvas element.
-In het canvas element wordt de effectief genomen foto weergegeven.
+De video tag dient om je beeld te laten zien, daarbinnen wordt gezocht naar QR-codes.
 
-Om alles op te starten gebruik je de startCamera functie met:
-Eerste argument: true voor front camera, false voor back camera (boolean, required)
-Tweede argument: selector voor het video element (string, required)
-Derde argument: selector voor het canvas element (string, optioneel)
-Vierde argument: selector voor het button element (string, optioneel)
-Vijfde argument: een functie die wordt aangeroepen als er een foto genomen is (function, optioneel)
+Om alles op te starten gebruik je de startQrScanner functie met:
+Eerste argument: selector voor het video element (string, required)
+Tweede argument: een functie die wordt aangeroepen als er een qr-code gevoncen is. Het eerste argument van die functie geeft de inhoud van de qr code mee. (function, required)
 
 
 //
@@ -24,18 +19,17 @@ Vijfde argument: een functie die wordt aangeroepen als er een foto genomen is (f
 
 // body:
 
-<video id="qr-scanner"></video>
+<video id="qr-scanner" width="320" height="480"></video>
 
 //
 // .js
 //
 
-function callback(base64) {
-  console.log('the image was captured');
-  console.log(base64);
+function qrSuccess(result) {
+  alert(result);
 }
 
-startCamera(false, '#video', '#canvas', '#capture', callback);
+startQrScanner('#qr-scanner', qrSuccess);
 
 */
 

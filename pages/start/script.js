@@ -6,9 +6,3 @@ startButton.onclick = () => {
   const nextPage = 'stop1';
   location.assign(`../navigate/index.html?coordinates=${coordinates}&locationName=${locationName}&nextPage=${nextPage}`)
 }
-
-function qrSuccess(result) {
-  alert(result);
-}
-
-startQrScanner('#qr-scanner', qrSuccess);
