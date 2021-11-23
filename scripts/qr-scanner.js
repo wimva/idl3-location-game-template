@@ -64,7 +64,7 @@ if(a instanceof Image)return d._awaitImageLoad(a).then(()=>a);if(a instanceof Fi
 
 /* Implementation */
 
-QrScanner.WORKER_PATH = '../../scripts/qr-scanner-worker.min.js';
+QrScanner.WORKER_PATH = '../../scripts/qr-scanner-worker.js';
 
 let qrScanner = null;
 
