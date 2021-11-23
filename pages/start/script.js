@@ -12,4 +12,4 @@ function callback(base64) {
   console.log(base64);
 }
 
-startCamera(false, '#video', '#canvas', '#capture', callback);
+startCamera(true, '#video', '#canvas', '#capture', callback);
