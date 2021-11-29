@@ -1,6 +1,9 @@
 /*
 Gebruik:
 
+Importeer eerst hetvolgende in je html:
+<script defer src="../../scripts/secrets.js"></script>
+
 Met createMap kan je een interactieve map tonen.
 Hiervoor heb je een element nodig met een unieke ID waar we deze map op kunnen toepassen.
 Dit element heeft ook afmetingen nodig om getoond te kunnen worden.
@@ -16,7 +19,7 @@ const myMap = createMap("uniekeID", latitude, longitude, zoom, 'mapbox://styles/
 - Deze kan je bij mapox zelf aanmaken en er wordt je dan de nodige link hiervoor gegeven.
   Deze parameter is optioneel
 
-  
+
 Nadat je één of meerdere maps hebt aangemaakt, kan je hierop ook custom markers aanbrengen.
 Je hebt de unieke 'myMap' nodig om te zeggen op welke map er een pin moet komen.
 
@@ -30,7 +33,7 @@ createMarker(myMap, 'markerID', width, height, "path/to/pin.svg",latitude,longit
 - Je marker: kan een png of svg zijn (jpg ook maar die heeft geen transparantie)
 - latitude en longitude zijn de coördinaten
 - verplaatsbare marker? false/true zijn de enigste mogelijkheden
-  default waarde is false (mag in dat geval dus weggelaten worden) 
+  default waarde is false (mag in dat geval dus weggelaten worden)
 
 */
 function createMap(myID, lat, lng, zoom, styled) {
