@@ -1,3 +1,38 @@
+/*
+Gebruik:
+
+Met createMap kan je een interactieve map tonen.
+Hiervoor heb je een element nodig met een unieke ID waar we deze map op kunnen toepassen.
+Dit element heeft ook afmetingen nodig om getoond te kunnen worden.
+
+Dit oproepen doe je als volgt:
+
+const myMap = createMap("uniekeID", latitude, longitude, zoom, 'mapbox://styles/...');
+
+- 'myMap' moet eveneens een unieke waarde zijn
+- latitude en longitude zijn de coördinaten
+- 'zoom' moet een getal van 0-22 zijn
+- De laatste parameter dient om je map een unieke styling mee te geven
+- Deze kan je bij mapox zelf aanmaken en er wordt je dan de nodige link hiervoor gegeven.
+  Deze parameter is optioneel
+
+  
+Nadat je één of meerdere maps hebt aangemaakt, kan je hierop ook custom markers aanbrengen.
+Je hebt de unieke 'myMap' nodig om te zeggen op welke map er een pin moet komen.
+
+Een pin aanmaken doe je zo:
+
+createMarker(myMap, 'markerID', width, height, "path/to/pin.svg",latitude,longitude, false);
+
+- Eerste parameter is de map waarop we de pin gaan plaatsen.
+- Dan volgt de unieke id van je marker
+- width/height: Hoe breed en hoog is je marker? Telkens een cijfer zonder pixels
+- Je marker: kan een png of svg zijn (jpg ook maar die heeft geen transparantie)
+- latitude en longitude zijn de coördinaten
+- verplaatsbare marker? false/true zijn de enigste mogelijkheden
+  default waarde is false (mag in dat geval dus weggelaten worden) 
+
+*/
 function createMap(myID, lat, lng, zoom, styled) {
     lat = typeof lat !== "undefined" ? lat : 51.219608;
     lng = typeof lng !== "undefined" ? lng : 4.411694;
@@ -33,6 +68,3 @@ function createMap(myID, lat, lng, zoom, styled) {
       draggable: draggable
     }).setLngLat([lng,lat]).addTo(map);
   }
-
-  const myMap = createMap("map", 51.219608, 4.411694, 10, 'mapbox://styles/matthekim/ckv6gc88y0c9u15t5ppk1horn');
-  createMarker(myMap, 'marker',20, 30, "https://driesvannoten-la.com/img/pin.svg",51.219608,4.411694, false);
