@@ -14,3 +14,5 @@ To use the test-map, you'll need to create an account on MapBox and create `/scr
 
 - [Camera (+ take a picture)](scripts/camera.js)
 - [QR Code Scanner](scripts/qr-scanner.js)
+- [Maps](scripts/maps.js)
+- [Arrow to next location (with compass)](scripts/point-to-location.js)
