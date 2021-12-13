@@ -1,8 +1,12 @@
 /*
 Gebruik:
 
-Importeer eerst hetvolgende in je html:
+Importeer eerst hetvolgende in de head van je html:
+
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
 <script defer src="../../scripts/secrets.js"></script>
+<script defer src="../../scripts/maps.js"></script>
 
 Met createMap kan je een interactieve map tonen.
 Hiervoor heb je een element nodig met een unieke ID waar we deze map op kunnen toepassen.
