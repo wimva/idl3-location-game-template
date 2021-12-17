@@ -74,4 +74,6 @@ function createMap(myID, lat, lng, zoom, styled) {
     const marker = new mapboxgl.Marker(el, {
       draggable: draggable
     }).setLngLat([lng,lat]).addTo(map);
+
+    return marker;
   }
