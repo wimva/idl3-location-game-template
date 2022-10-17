@@ -29,13 +29,14 @@ function success(position) {
   // laat die afstand zien
   distanceElement.innerText = distance;
 
-  // de afstand tussen mijn locatie en die van mijn doel is minder dan 20 meter?
-  if (distance < successRadiusInMeter) {
+  // de afstand tussen mijn locatie en die van mijn doel is minder dan 20 meter, rekeninghoudend met de accuraatheid van gps?
+  if (distance < successRadiusInMeter + position.coords.accuracy) {
     // navigeer naar de pagina die getoond moet worden als ik in 20 meter van locatie ben
     location.assign(`../${nextPage}/index.html`)
   }
 }
 
+// wanneer geen gps beschikbaar is
 function error(err) {
   console.warn('ERROR(' + err.code + '): ' + err.message);
 }
@@ -45,7 +46,7 @@ if (isInIframe()) {
 
   // get map gps positions
   function handleMessage (evt) {
-  	success({coords: {latitude: evt.data.lat, longitude: evt.data.lng}});
+  	success({coords: {latitude: evt.data.lat, longitude: evt.data.lng, accuracy: 35}});
   }
   // listen to messages from test-iframe
   window.addEventListener("message", handleMessage, false);
