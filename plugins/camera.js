@@ -4,7 +4,7 @@ Gebruik:
 
 De video tag dient om je beeld te laten zien. Als je een foto wil laten
 nemen heb je de capture button nodig en een canvas element.
-In het canvas element wordt de effectief genomen foto weergegeven.
+In het canvas element wordt de genomen foto weergegeven.
 
 Om alles op te starten gebruik je de startCamera functie met:
 Eerste argument: true voor front camera, false voor back camera (boolean, required)
@@ -20,7 +20,7 @@ Vijfde argument: een functie die wordt aangeroepen als er een foto genomen is (f
 
 // head:
 
-<script defer src="../../scripts/camera.js"></script>
+<script defer src="../../plugins/camera.js"></script>
 
 // body:
 

@@ -16,7 +16,7 @@ Eerste argument: een callback functie waarin je telkens het volume van de microf
 
 // head:
 
-<script defer src="../../scripts/microphone.js"></script>
+<script defer src="../../plugins/microphone.js"></script>
 
 //
 // .js

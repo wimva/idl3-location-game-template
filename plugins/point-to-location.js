@@ -26,7 +26,7 @@ Achtste argument: de onHide functie voor de permissies
 // head:
 
 <script defer src="../../scripts/get-distance.js"></script>
-<script defer src="../../scripts/point-to-location.js"></script>
+<script defer src="../../plugins/point-to-location.js"></script>
 
 // body:
 

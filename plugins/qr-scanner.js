@@ -15,7 +15,7 @@ Tweede argument: een functie die wordt aangeroepen als er een qr-code gevoncen i
 
 // head:
 
-<script defer src="../../scripts/qr-sanner.js"></script>
+<script defer src="../../plugins/qr-sanner.js"></script>
 
 // body:
 

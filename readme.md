@@ -12,8 +12,8 @@ To use the test-map, you'll need to create an account on MapBox and create `/scr
 
 ## Extra Plugins
 
-- [Camera (+ take a picture)](scripts/camera.js)
-- [QR Code Scanner](scripts/qr-scanner.js)
-- [Maps](scripts/maps.js)
-- [Arrow to next location (with compass)](scripts/point-to-location.js)
-- [Microphone Volume](scripts/microphone.js)
+- [Camera (+ take a picture)](plugins/camera.js)
+- [QR Code Scanner](plugins/qr-scanner.js)
+- [Maps](plugins/maps.js)
+- [Arrow to next location (with compass)](plugins/point-to-location.js)
+- [Microphone Volume](plugins/microphone.js)
