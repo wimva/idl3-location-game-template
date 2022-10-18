@@ -13,7 +13,7 @@ const coordinates = {
 }
 
 const locationName = getQueryParam('locationName');
-locationNameElement.innerText = locationName;
+locationNameElement.textContent = locationName;
 
 const nextPage = getQueryParam('nextPage');
 
@@ -27,7 +27,7 @@ function success(position) {
   // bereken afstand tussen mijn locatie en die van mijn doel
   const distance = getDistance(position.coords.latitude, position.coords.longitude, coordinates.latitude, coordinates.longitude).distance;
   // laat die afstand zien
-  distanceElement.innerText = distance;
+  distanceElement.textContent = distance;
 
   // de afstand tussen mijn locatie en die van mijn doel is minder dan 20 meter, rekeninghoudend met de accuraatheid van gps?
   if (distance < successRadiusInMeter + position.coords.accuracy) {
