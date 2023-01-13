@@ -30,7 +30,7 @@ function success(position) {
   distanceElement.textContent = distance;
 
   // de afstand tussen mijn locatie en die van mijn doel is minder dan 20 meter, rekeninghoudend met de accuraatheid van gps?
-  if (distance < successRadiusInMeter + position.coords.accuracy) {
+  if (distance < successRadiusInMeter + Math.min(position.coords.accuracy/2, 20)) {
     // navigeer naar de pagina die getoond moet worden als ik in 20 meter van locatie ben
     location.assign(`../${nextPage}/index.html`)
   }
