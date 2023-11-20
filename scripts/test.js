@@ -21,7 +21,7 @@ drawCoordinatesAsText(startCoordinates);
 
 const map = new mapboxgl.Map({
   container: 'map',
-  style: 'mapbox://styles/mapbox/streets-v11',
+  style: 'mapbox://styles/vaw-be/clp71u19j00jd01pc8lg86gjo',
   center: [startCoordinates.lng, startCoordinates.lat],
   zoom: 15
 });
