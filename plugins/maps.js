@@ -3,8 +3,8 @@ Gebruik:
 
 Importeer eerst hetvolgende in de head van je html:
 
-<link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
-<script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.js"></script>
 <script defer src="../../scripts/secrets.js"></script>
 <script defer src="../../plugins/maps.js"></script>
 
