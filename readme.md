@@ -17,3 +17,4 @@ To use the test-map, you'll need to create an account on MapBox and create `/scr
 - [Maps](plugins/maps.js)
 - [Arrow to next location (with compass)](plugins/point-to-location.js)
 - [Microphone Volume](plugins/microphone.js)
+- [Geofence](plugins/geofence.js)
